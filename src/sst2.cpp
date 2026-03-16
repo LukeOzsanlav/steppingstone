@@ -158,7 +158,7 @@ List walk(NumericMatrix tpm, int n, NumericVector xy0, int nc, NumericVector dp,
 
 
   IntegerVector c(n), w, ch = Range(0, 4); // choices for the new yx
-  int i, k, t;
+  int i, k, t=0;
   c(0) = xy0(0) + xy0(1) * nc;
 
   for (i = 1; i < n; i++) {
@@ -232,7 +232,7 @@ List ud_func(NumericMatrix tpm, int n, NumericVector xy0, int nc, int burnin, Nu
 
   // first cell
   int k = xy0(0) + (nc - xy0(1)) * nc; // index for neighbouring cell
-  int next, t;
+  int next, t=0;
   ud(k)++;
 
   // directional persistence
