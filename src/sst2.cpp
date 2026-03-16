@@ -150,11 +150,11 @@ List walk(NumericMatrix tpm, int n, NumericVector xy0, int nc, NumericVector dp,
 
   NumericVector dp_stay = NumericVector::create(1, 1, 1, 1, 1);
 
-  NumericVector dp_e = NumericVector::create(dp[1], dp[0], dp[2], dp[1], dp[1]);
-  NumericVector dp_w = NumericVector::create(dp[1], dp[2], dp[0], dp[1], dp[2]);
+  NumericVector dp_e = NumericVector::create(dp[0], dp[2], dp[1], dp[0], dp[0]);
+  NumericVector dp_w = NumericVector::create(dp[0], dp[1], dp[2], dp[0], dp[1]);
 
-  NumericVector dp_s = NumericVector::create(dp[1], dp[1], dp[1], dp[2], dp[0]);
-  NumericVector dp_n = NumericVector::create(dp[1], dp[1], dp[1], dp[0], dp[2]);
+  NumericVector dp_s = NumericVector::create(dp[0], dp[0], dp[0], dp[1], dp[2]);
+  NumericVector dp_n = NumericVector::create(dp[0], dp[0], dp[0], dp[2], dp[1]);
 
 
   IntegerVector c(n), w, ch = Range(0, 4); // choices for the new yx
